@@ -45,12 +45,13 @@ function Board() {
         <>
             {isWinner ?
                  <>
-                <div>Game over, player {isXTurn? "O" : "X"} wins</div>
-                <button onClick={handleReset}>Reset Game</button>
+                <h1 className='header'>Game over, player {isXTurn? "O" : "X"} wins</h1>
+                <button className='buttonCSS' onClick={handleReset}>Reset Game</button>
                 </>
                 :
                 <>
-                    <h4> Player {isXTurn? "X" : "O"}'s turn</h4>
+                    <h1 className="header"> {isXTurn? "X" : "O"}'s turn</h1>
+                    <div className='board'>
                     <div className="board-row">
                         <Square onClick={()=> handleClick(0)} value={state[0]} />
                         <Square onClick={()=> handleClick(1)} value={state[1]} />
@@ -65,6 +66,7 @@ function Board() {
                         <Square onClick={()=> handleClick(6)} value={state[6]} />
                         <Square onClick={()=> handleClick(7)} value={state[7]} />
                         <Square onClick={()=> handleClick(8)} value={state[8]} />
+                    </div>
                     </div>
                 </>
             }
